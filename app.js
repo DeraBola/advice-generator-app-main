@@ -9,7 +9,7 @@ function onBtnClick() {
         .then(resp => resp.json())
         .then(jsonData => {
             id_tag.innerText = 'advice #' + jsonData['slip']['id'];
-            advice_tag.innerText = 'advice' + jsonData['slip']['advice'];
+            advice_tag.innerText = '' + jsonData['slip']['advice'];
         });
 }
 btn.addEventListener('click', onBtnClick);
