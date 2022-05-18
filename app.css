@@ -34,6 +34,8 @@ body {
     padding: 1.25rem 1.25rem 2rem;
     border-radius: 1rem;
     text-align: center;
+    position: relative;
+    max-width: 30rem;
 }
 
 .container p {
@@ -55,7 +57,32 @@ body {
 }
 
 .container picture img {
+    background-color: var(--Grayish-Blue);
+    position: relative;
     margin-bottom: 1rem;
+}
+
+.container picture::before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 40%;
+    position: absolute;
+    right: 1.25rem;
+    bottom: 3.8rem;
+    background-color: var(--Light-Cyan);
+    z-index: 99;
+}
+
+.container picture::after {
+    content: " ";
+    display: block;
+    height: 1px;
+    width: 42%;
+    position: relative;
+    left: 0;
+    bottom: 1.7rem;
+    background-color: var(--Light-Cyan);
 }
 
 .container button {
@@ -70,37 +97,8 @@ body {
 }
 
 .container button:hover {
-    background-color: hsl(168, 75%, 53%);
+    box-shadow: 0 0 3.5rem hsla(173, 87%, 73%, 0.75);
     cursor: pointer;
-}
-
-.hr-lines {
-    position: relative;
-    max-width: 500px;
-    margin: 100px auto;
-    text-align: center;
-}
-
-.hr-lines::before {
-    content: " ";
-    display: block;
-    height: 2px;
-    width: 130px;
-    position: absolute;
-    top: 50%;
-    left: 0px;
-    background: red;
-}
-
-.hr-lines::after {
-    content: " ";
-    display: block;
-    height: 2px;
-    width: 130px;
-    position: absolute;
-    top: 50%;
-    left: 0px;
-    background: red;
 }
 
 .attribution {
@@ -113,4 +111,10 @@ body {
 .attribution a {
     color: hsl(228, 45%, 44%);
     text-decoration: none;
+}
+
+@media (min-width:500px) {
+    .container {
+        max-width: 480px;
+    }
 }
